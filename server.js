@@ -20,7 +20,8 @@ app.get('/getAccessToken', async function (req, res) {
     const params = "?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&code=" + req.query.code
 
     await fetch("https://github.com/login/oauth/access_token" + params, {
-        method : {
+        method :"POST",
+        headers: {
             "Accept" : "application/json"
         }
     }).then((response) => {
@@ -39,11 +40,11 @@ app.get('/getUserData', async function (req, res) {
             "Authorization" : req.get("Authorization")
         }
     }).then((response) => {
-        return response.json();
-   }).then((data) => {
-       console.log(data);
-       res.json(data);
-   })
+         return response.json();
+    }).then((data) => {
+        console.log(data);
+        res.json(data);
+    })
 })
 
 app.listen(4000, function (){
