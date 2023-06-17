@@ -102,7 +102,7 @@ function App() {
       />
       <div className="flex-1 flex items-center justify-center">
         {isLoggedIn ? (
-          <div className="w-full max-w-2xl mx-auto">
+          <div className="w-full max-w-2xl mx-auto ">
             <main className="container mx-auto px-4">
               <MainContent userData={userData} trendingRepos={trendingRepos} />
             </main>
